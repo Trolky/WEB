@@ -1,0 +1,182 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text */
+}
+
+h1.title {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 20px;
+    color: #81c784; /* Light green */
+}
+
+/* Container for the table */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.table-responsive-custom {
+    overflow-x: auto;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #333; /* Dark table background */
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #555; /* Dark border */
+}
+
+table th {
+    background-color: #1e1e1e; /* Dark header background */
+    color: #e0e0e0; /* Light text */
+    font-size: 1.1rem;
+}
+
+table td {
+    font-size: 1rem;
+    color: #e0e0e0; /* Light text */
+}
+
+/* Form Styles inside the table */
+form {
+    margin: 0;
+}
+
+input[type="submit"] {
+    background-color: #81c784; /* Light green */
+    color: #121212; /* Dark text */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #66bb6a; /* Slightly darker green */
+}
+
+input[type="hidden"] {
+    display: none;
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown .dropbtn {
+    background-color: #81c784; /* Light green */
+    color: #121212; /* Dark text */
+    padding: 8px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333; /* Dark background for dropdown */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content input[type="submit"] {
+    background-color: transparent;
+    color: #81c784; /* Light green */
+    text-align: left;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.dropdown-content input[type="submit"]:hover {
+    background-color: #444; /* Darker on hover */
+}
+
+.dropdown-content .bx {
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+/* Select Styles */
+select {
+    padding: 8px;
+    border: 1px solid #555; /* Dark border */
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    background-color: #333; /* Dark background for select */
+    color: #e0e0e0; /* Light text */
+}
+
+select:disabled {
+    background-color: #555; /* Darker background for disabled select */
+    color: #888; /* Muted text */
+    cursor: not-allowed;
+}
+
+/* Miscellaneous Styling */
+.text-muted {
+    color: #888;
+}
+
+.text-danger {
+    color: #f44336; /* Red for danger actions */
+}
+
+/* Button Styles for Disabled Select */
+select[disabled] {
+    background-color: #444; /* Even darker background for disabled select */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    table th, table td {
+        font-size: 0.9rem;
+    }
+
+    input[type="submit"] {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .dropdown .dropbtn {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+}

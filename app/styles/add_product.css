@@ -1,0 +1,115 @@
+/* Custom container for the page */
+.container-custom {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #212121;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Section */
+#formHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Custom Form Box */
+.form-custom {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Form Inputs */
+.input-custom {
+    width: 100%;
+    padding: 12px;
+    background-color: #444;
+    border: 1px solid #555;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+.input-custom:focus {
+    border-color: #81c784;
+    outline: none;
+}
+
+/* Form Labels */
+.label-custom {
+    font-size: 1.1rem;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+/* Textarea */
+textarea.input-custom {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Select Input */
+.select-custom {
+    width: 100%;
+    padding: 12px;
+    background-color: #444;
+    color: white;
+    border: 1px solid #555;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.select-custom:focus {
+    border-color: #81c784;
+    outline: none;
+}
+
+/* Error messages */
+.error {
+    color: #f44336;
+    font-size: 0.9rem;
+    margin-top: 6px;
+}
+
+/* Submit Button */
+.btn-submit {
+    background-color: #81c784;
+    color: #212121;
+    font-size: 1.1rem;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #66bb6a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container-custom {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .form-custom {
+        padding: 20px;
+    }
+
+    .input-custom, .select-custom, .btn-submit {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}

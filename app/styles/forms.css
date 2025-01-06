@@ -1,0 +1,134 @@
+:root {
+    --mainFont: 'Raleway', sans-serif;
+    --subFont: 'Montserrat', sans-serif;
+    --primaryColor: #f95959;
+    --secondaryColor: #343a40; /* Dark background */
+    --inputColor: #bbbbbb;
+    --inputBorderColor: #555;
+}
+
+body {
+    font-family: var(--mainFont);
+    background-color: var(--secondaryColor);
+    color: #fff;
+}
+
+/* General Styles */
+.container {
+    max-width: 900px;
+}
+
+/* Form Area */
+#formHolder {
+    padding: 50px 0;
+}
+
+.form {
+    position: relative;
+    background-color: var(--secondaryColor);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.form .form-group {
+    margin-bottom: 1rem;
+}
+
+.form label {
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-family: var(--subFont);
+}
+
+.form input {
+    outline: none;
+    border: 1px solid var(--inputBorderColor);
+    background-color: #444;
+    color: #fff;
+    font-size: 15px;
+    font-family: var(--subFont);
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.form input:focus {
+    border-color: var(--primaryColor);
+}
+
+.form .CTA {
+    margin-top: 20px;
+}
+
+.form .CTA input {
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 10px;
+    background: var(--primaryColor);
+    color: #fff;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+.form .CTA input:hover {
+    background: #e74c3c;
+}
+
+.form .CTA a.switch {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--inputColor);
+    text-decoration: underline;
+    transition: all 0.3s;
+}
+
+.form .CTA a.switch:hover {
+    color: var(--primaryColor);
+}
+
+/* Media Queries for mobile responsiveness */
+@media (max-width: 768px) {
+    .container {
+        overflow: hidden;
+    }
+
+    .form {
+        width: 80vw;
+        margin-left: 10vw;
+    }
+
+    .form .form-peice {
+        margin: 0;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        transition: all .5s ease-in-out;
+    }
+
+    .form .form-peice.switched {
+        transform: translateY(-100%);
+        width: 100%;
+        left: 0;
+    }
+
+    .form form {
+        width: 100% !important;
+        padding: 60px;
+        left: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    section#formHolder .form {
+        width: 100vw;
+        margin-left: 0;
+    }
+
+    h2 {
+        font-size: 50px !important;
+    }
+}

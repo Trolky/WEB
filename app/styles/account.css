@@ -1,0 +1,119 @@
+/* General Body and Page Styling */
+body {
+    background-color: #1b1b1b; /* Dark background for the page */
+    color: #e0e0e0; /* Light text for readability */
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/* Header Styling */
+#header {
+    background-color: #181818; /* Dark background for header */
+}
+
+/* Title Styling */
+.title {
+    color: #e0e0e0;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Form Section Styling */
+.screen {
+    background-color: #282828; /* Dark background for form section */
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+}
+
+/* Form Table Styling */
+table {
+    width: 100%;
+    margin-top: 1rem;
+    color: #e0e0e0;
+}
+
+td {
+    padding: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 0.8rem;
+    width: 100%;
+    font-size: 1rem;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus {
+    background-color: #444;
+    border-color: #76c7c0;
+    outline: none;
+    color: #fff;
+}
+
+/* Submit Button Styling */
+input[type="submit"] {
+    background-color: #76c7c0;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+input[type="submit"]:hover {
+    background-color: green;
+}
+
+/* Output Message Styling */
+output {
+    color: #76c7c0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Small Text */
+small {
+    color: #888;
+    font-size: 0.875rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .screen {
+        padding: 1.5rem;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .screen {
+        padding: 1rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    input[type="submit"] {
+        font-size: 1rem;
+    }
+}

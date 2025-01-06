@@ -1,0 +1,287 @@
+\documentclass[12pt, a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[IL2]{fontenc}
+\usepackage[czech]{babel}
+\usepackage{enumitem}
+\usepackage{tocloft}
+\usepackage{multicol}
+\usepackage{pdfpages}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{listings}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[hidelinks]{hyperref}
+\usepackage[nottoc]{tocbibind}
+
+\usepackage[
+    left=30mm, 
+    right=30mm, 
+    top=40mm, 
+    bottom=30mm,
+]{geometry}
+
+% Sazba obrázků
+\graphicspath{{Images/}} % Při vkládání obrázků se bude prefixovat tato relativní cesta.
+
+% Numbering style modification
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thefigure{\arabic{figure}}
+\renewcommand\thetable{\arabic{table}}
+
+\newcommand{\lawyertalk}{\tiny}
+
+\begin{document}
+
+% Titulní strana
+\begin{titlepage}
+    \centering      % Odtud do konce prostředí bude vše na středu,
+    \Large          % velkými písmeny
+    \sffamily       % a bezpatkovým písmem.
+
+    \includegraphics[width=.7\textwidth]{fav}
+
+    Semestrální práce z předmětu
+
+    Webové aplikace
+    
+    \vspace{18mm}
+    {\Huge\bfseries E-shop s hrami}
+
+    \vspace{18mm}
+    \today                          % Čas je získán ze systému.
+
+    \vfill                          % Vyplní prostor
+    \raggedright                    % Vše bude zarováno do leva.
+    \textsl{\lawyertalk Autor:}\\   % Vtípek z přednášky + ukázka tvorby makra a přidání sémantiky do stylu textu.
+    Martin Reich\\               % Příkaz \\ provede násilný zlom řádky.
+    A22B0123P\\
+    \texttt{reichm@students.zcu.cz}
+    
+    \vspace{\baselineskip}
+    \textsl{Cvičící:}\\
+    Ing. Michal Nykl Ph.D.\\
+    \texttt{nyklm@ntis.zcu.cz}
+\end{titlepage}
+
+% obsah
+\tableofcontents
+
+\pagebreak
+
+\section{Zadání}
+\subsection{Nutné požadavky na všechny samostatné práce}
+
+\begin{enumerate}[left=1cm] % Nastavení odsazení pro všechny položky v seznamu
+\item Technologie - povinně HTML5, CSS, PHP a SQL (MySQL nebo jiná databáze), volitelně šablony, JavaScript, AJAX, Bootstrap apod.
+\item Aplikace musí dodržovat MVC architekturu a využívat OOP (min. controllery a model).
+\item Web má jeden vstupní soubor (obvykle index.php), který na základě parametrů URL adresy provede požadovanou akci (tj. zavolá příslušný controller) a vypíše výstup uživateli.
+\item Pro práci s databází musí být využito PDO nebo jeho ekvivalent.
+\item Web musí být chráněn proti útokům typu XSS a SQL Injection.
+\item V databázi musí být hesla hashována.
+\item Web musí využívat upload souborů.
+\item Web musí mít responzivní design (alespoň pro PC a mobil).
+\item Web musí mít alespoň 3 uživatelské role (po přihlášení v systému provádí příslušné činnosti, např. autor, recenzent, admin).
+\item K aplikaci musí být dodána dokumentace (viz dále) a skripty pro instalaci databáze (např. získané exportem databáze).
+\item Práce musí být osobně předvedena cvičícímu a po schválení odevzdána na CourseWare či Portál.
+\item Aplikaci není možné realizovat s využitím ucelených PHP frameworků (zakázáno např. Nette, Symfony atd.). Použití jejich komponent je možné pouze po schválení vyučujícím.
+\item Pro front-end je vhodné využít framework Bootstrap (getbootstrap.com) nebo jeho ekvivalent.
+
+
+\end{enumerate}
+
+
+\subsection{Dokumentace}
+\begin{enumerate}[left=1cm] % Nastavení odsazení pro všechny položky v seznamu
+\item Vaše jméno, email, datum vytvoření, název předmětu a název aplikace/tématu.
+\item URL vytvořených stránek (pokud jsou zveřejněny na serveru students.kiv.zcu.cz či jinde)
+\item Popis použitých technologií - uveďte hlavně, ve které části jste kterou technologii použili.
+\item Popis adresářové struktury aplikace - co je ve kterých adresářích a souborech.
+\item Popis architektury aplikace - co mají na starosti které třídy (popř. lze využít i UML diagramy).
+\item Seznam defaultních uživatelů včetně loginů a hesel.
+\item U alternativního zadání uveďte celé, cvičícím schválené zadání práce.
+\item Dokumentaci netiskněte, ale odevzdejte ji ve formátu PDF spolu s aplikací.
+\end{enumerate}
+
+
+\section{Popis použitých technologií}
+\subsection{JavaScript}
+JavaScript je vysokoúrovňový, dynamický a interpretovaný programovací jazyk, který se používá především pro vývoj webových aplikací a interaktivních webových stránek. Původně byl vyvinut pro přidání dynamických funkcí do webových stránek, ale dnes je využíván ve velkém množství různých oblastí, od front-endu až po back-end.
+JavaScript je jazyk, který je schopen provádět různé úkoly na straně uživatele (client-side), jako jsou například:
+\begin{itemize}
+    \item Manipulace s obsahem stránky (DOM - Document Object Model)
+    \item Ověřování formulářů
+    \item Tvorba interaktivních prvků (např. tlačítka, animace, interaktivní mapy)
+    \item Komunikace se servery bez nutnosti obnovovat stránku (pomocí AJAX, Fetch API)
+\end{itemize}
+JavaScript je základní součástí většiny moderních webových aplikací. Používá se pro vytvoření interaktivních prvků, animací a dynamických změn na stránkách. Příklady využití:
+\begin{itemize}
+    \item \textbf{Webové aplikace}: JavaScript umožňuje vytvářet interaktivní webové aplikace, které reagují na akce uživatele v reálném čase.
+    \item \textbf{Webové rozhraní}: JavaScript může manipulovat s HTML a CSS pro změnu vzhledu a chování webové stránky bez nutnosti jejího znovu načítání.
+\end{itemize}
+JavaScript jsem použil pro vytvoření interaktivní webové aplikace, která umožňuje uživatelům zadávat data do formuláře, provádět validace a dynamicky měnit obsah stránky bez jejího opětovného načítání. Tento přístup mi umožnil zvýšit uživatelskou přívětivost a efektivitu aplikace.
+\newpage
+\begin{verbatim}
+    document.addEventListener('DOMContentLoaded', () => {
+  'use strict';
+
+  const errors = {
+    username: true,
+    email: true,
+    password: true,
+    passwordConfirm: true,
+    surname: true,
+    address: true,
+    login: true,
+    tel: true,
+  };
+
+  const setError = (input, message) => {
+    const errorSpan = input.parentElement.querySelector('.error');
+    errorSpan.textContent = message;
+    errorSpan.style.display = 'block';
+    input.parentElement.classList.add('hasError');
+  };
+
+  const clearError = (input) => {
+    const errorSpan = input.parentElement.querySelector('.error');
+    errorSpan.textContent = '';
+    errorSpan.style.display = 'none';
+    input.parentElement.classList.remove('hasError');
+  };
+
+  const validateInput = (input, formType) => {
+    const value = input.value.trim();
+
+    if (input.classList.contains('name') && formType === 'signup') {
+      errors.username = value.length === 0;
+      errors.username ? setError(input, 'Prosím zadejte svoje jméno') : clearError(input);
+    }
+
+    if (input.classList.contains('surname') && formType === 'signup') {
+      errors.surname = value.length === 0;
+      errors.surname ? setError(input, 'Prosím zadejte svoje příjmení') : clearError(input);
+    }
+    ...
+  }
+}
+    \end{verbatim}
+
+\subsection{PHP}
+PHP je skriptovací jazyk, který se vykonává na serveru, což znamená, že kód napsaný v PHP je zpracován na serveru před tím, než je odeslán uživateli jako HTML stránka. PHP je široce používaný k vývoji webových aplikací a podporuje různé databáze, zejména MySQL. PHP je jednoduchý na učení a používání a je často integrován s HTML, CSS a JavaScriptem.
+
+V mém případě jsem PHP implementoval v controllerech jako například pro přidávání produktů do systému, který umožňuje uživatelům přidávat nové produkty do databáze. Tento controller zpracovává formulář, ověřuje údaje, přidává produkt do databáze a zobrazuje zpětnou vazbu uživateli.
+
+\subsection{CSS a Bootstrap}
+CSS (Cascading Style Sheets) je jazyk, který slouží k definování vzhledu a formátování webových stránek. Pomocí CSS můžeme určovat, jak budou jednotlivé HTML prvky zobrazeny, jako například barvy, písma, mezery, okraje, pozadí a rozložení. CSS je nezbytnou součástí moderního webového vývoje, protože umožňuje oddělit obsah (HTML) od vzhledu (CSS), což přispívá k lepší údržbě a přehlednosti kódu.
+\newline
+Bootstrap je open-source framework pro vývoj webových stránek a aplikací, který obsahuje sadu nástrojů pro rychlou tvorbu responzivních a mobilně přívětivých designů. Využívá HTML, CSS a JavaScript a poskytuje předdefinované styly a komponenty, které usnadňují vývoj.
+
+V mé semestrální bylo CSS a Bootstrap využito k rychlejšímu vytvoření vzhledu stránky a jeho responzivity.
+
+\subsection{MVC architektura}
+MVC (Model-View-Controller) je designový vzor (nebo architektura) používaný při vývoji aplikací, který dělí aplikaci na tři základní komponenty: Model, View (pohled), a Controller (ovladač). Tento vzor pomáhá udržet kód čistý, dobře strukturovaný a snadno rozšiřitelný, což usnadňuje údržbu aplikace.
+
+V mé semestrální prácí byla MVC struktura použita pro zlepšení struktury kodu, zjednodušení údržby a ke snaší rozšiřitelnosti.
+\section{Adresářová struktura aplikace}
+Aplikace je rozdělena do několika hlavních složek podle architektury MVC (Model-View-Controller), která zajišťuje lepší organizaci a údržbu kódu. Níže je popsána struktura aplikace:
+
+\begin{itemize}
+  \item \textbf{app}: Hlavní složka aplikace, která obsahuje všechny komponenty potřebné pro správný chod aplikace.
+  \begin{itemize}
+    \item \textbf{controller}: Složka, která obsahuje všechny kontrolery. Kontrolery jsou zodpovědné za obsluhu uživatelských akcí, komunikaci s modelem a aktualizaci pohledu. Každý kontroler je obvykle zaměřen na určitou část aplikace (např. přihlašování, správa produktů).
+    \begin{itemize}
+        \item \textbf{controllery}: Konkrétní soubory obsahující třídy kontrolerů, například \texttt{users\_controller.php}, \texttt{login\_controller.php}.
+    \end{itemize}
+    
+    \item \textbf{model}: Složka obsahující modely, které představují data aplikace a manipulují s nimi. Modely se starají o logiku aplikace a komunikaci s databází.
+    \begin{itemize}
+      \item \textbf{modely}: Součástí této složky jsou soubory, které definují třídy pro práci s daty, například \texttt{product.php}, \texttt{user.php}.
+    \end{itemize}
+    
+    \item \textbf{styles}: Složka pro uložení stylů aplikace. Tato složka obsahuje soubory CSS nebo preprocesorové soubory jako SASS, které definují vzhled aplikace.
+    \begin{itemize}
+      \item \textbf{styli}: Soubory, které obsahují stylování aplikace, např. \texttt{cart.css}, \texttt{forms.css}.
+    \end{itemize}
+    
+    \item \textbf{views}: Složka pro zobrazení (pohledy). Pohledy jsou soubory, které generují HTML, které se zobrazuje uživatelům. Tyto soubory zobrazují data, která poskytl kontroler, a zajišťují interakci s uživatelem.
+    \begin{itemize}
+      \item \textbf{vzhledy}: Konkrétní soubory obsahující HTML a šablony pro generování pohledů, například \texttt{login.php}, \texttt{users.php}.
+    \end{itemize}
+  \end{itemize}
+  
+  \item \textbf{db}: Tato složka obsahuje vše, co souvisí s databází, jako jsou skripty pro migrace, schémata databáze, inicializace databáze a podobně.
+  
+  \item \textbf{docs}: Složka, která obsahuje dokumentaci k aplikaci. Může zahrnovat technické detaily, jak aplikaci používat nebo rozšiřovat, a popis architektury aplikace.
+\end{itemize}
+
+\section{Popis architektury aplikace}
+account\_controller.php
+\begin{itemize}[left=1cm]
+    \item Zajištujě úpravu uživatelkých údajů.
+\end{itemize}
+
+login\_controller.php
+\begin{itemize}[left=1cm]
+    \item Zajištujě přihlašování uživatelů.
+\end{itemize} 
+
+database.php
+\begin{itemize}[left=1cm]
+    \item Zajištujě práci s databází.
+    \item Ukáláda a odebírá věci z databáze.
+\end{itemize} 
+
+user\_manager.php
+\begin{itemize}[left=1cm]
+    \item Zajištuje přihlašování a odhlašování uživatele.
+\end{itemize}
+
+users.php
+\begin{itemize}[left=1cm]
+    \item Zajištuje vykreslování stránky se správou uživatelů.
+\end{itemize}
+
+settings.inc.php
+\begin{itemize}[left=1cm]
+    \item Nastavení všech důležitých proměnných jako jsou stránky, cesty k controllerů a dále.
+\end{itemize}
+
+
+\section{Seznam defaultních uživatelů}
+
+Superadmin
+\begin{enumerate}[left=1cm]
+    \item Login: superadmin
+    \item Heslo: superadmin
+\end{enumerate}
+
+Admin
+\begin{enumerate}[left=1cm]
+    \item Login: admin
+    \item Heslo: admin123
+\end{enumerate}
+
+Skladník
+\begin{enumerate}[left=1cm]
+    \item Login: seller
+    \item Heslo: seller123
+\end{enumerate}
+
+Zákazník
+\begin{enumerate}[left=1cm]
+    \item Login: customer
+    \item Heslo: customer123
+\end{enumerate}
+
+\section{Závěr}
+Závěr této semestrální práce se zaměřil na vývoj webové aplikace pro e-shop s hrami, který splňuje všechny zadané požadavky a využívá moderní webové technologie. Během vývoje byly implementovány klíčové funkce jako ověřování uživatelských vstupů, dynamická manipulace s obsahem pomocí JavaScriptu, správa produktů v administrátorském rozhraní a zabezpečení aplikace proti útokům typu SQL Injection a XSS.
+
+Použité technologie, jako jsou PHP, MySQL, CSS a Bootstrap, umožnily vytvoření responsivního a uživatelsky přívětivého rozhraní, které je plně funkční na různých zařízeních. Důraz byl kladen na správnou architekturu aplikace, která byla postavena na vzoru MVC, čímž bylo zajištěno jasné oddělení jednotlivých částí aplikace (modelu, pohledů a kontrolerů) pro lepší údržbu a rozšiřitelnost.
+
+Dokumentace a popis použitých technologií, struktury aplikace i implementace jednotlivých částí byly podrobně zaznamenány a odevzdány spolu s aplikací. Výsledný e-shop s hrami je plně funkční a umožňuje správu uživatelů, produktů a objednávek s různými úrovněmi přístupových práv.
+
+Celkově lze říci, že semestrální práce úspěšně splnila všechny technické požadavky a poskytuje funkční a bezpečnou webovou aplikaci, která může být základem pro další rozšíření a vylepšení v budoucnosti.
+\end{document}
